@@ -1,0 +1,40 @@
+$scale-sm: 4px;
+$scale-md: 8px;
+$scale-lg: 14px;
+$scale-xlg: 16px;
+
+.p-sm{
+    padding: $scale-sm;
+}
+
+.p-md{
+    padding: $scale-md;
+}
+
+.p-lg{
+    padding: $scale-lg;
+}
+
+.rounded-sm{
+    border-radius: $scale-sm;
+}
+
+.rounded-md{
+    border-radius: $scale-md;
+}
+
+.rounded-lg{
+    border-radius: $scale-lg;
+}
+
+.gap-sm{
+    gap: $scale-sm;
+}
+
+.gap-md{
+    gap: $scale-md;
+}
+
+.gap-lg{
+    gap: $scale-lg;
+}

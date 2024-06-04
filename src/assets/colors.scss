@@ -1,0 +1,21 @@
+$bg-color-brand-primary: rgb(20, 20, 30);
+$bg-color-brand-secondary: rgb(10, 10, 20);
+$bg-color-brand-tertiary: rgb(255, 86, 20);
+
+:root {
+
+  --bg-color-brand-primary: #{$bg-color-brand-primary};
+  --bg-color-brand-secondary: #{$bg-color-brand-secondary};
+  --bg-color-brand-tertiary: #{$bg-color-brand-tertiary};
+
+}
+
+.bg-color-brand-primary {
+  background-color: var(--bg-color-brand-primary);
+}
+.bg-color-brand-secondary {
+  background-color: var(--bg-color-brand-secondary);
+}
+.bg-color-brand-tertiary {
+  background-color: var(--bg-color-brand-tertiary);
+}
