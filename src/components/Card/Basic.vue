@@ -1,6 +1,9 @@
 <template>
 
-    <div class="basic-card-wrapper bg-color-brand-one overflow-hidden p-md rounded-md shadow-sm flex flex-column pointer relative">
+    <div
+        class="basic-card-wrapper overflow-hidden p-md rounded-md shadow-sm flex flex-column pointer relative"
+        :class="content?.rarity?.current"
+    >
 
         <div class="basic-card-description flex flex-column gap-md p-lg">
 
@@ -10,7 +13,21 @@
                 color="#000000"
             />
 
-            <p class="color-brand-two font-sm"> {{ content?.description }} </p>
+            <p class="color-brand-two font-sm"> {{ content?.passive }} </p>
+
+            <div 
+                v-if="content?.tags"
+                class="flex wrap"
+            >
+                <div
+                    v-for="(item, index) of content.tags"
+                    class="p-md rounded-sm"
+                    :class="item?.current"
+                    :key="index"
+                >
+                    <p class="font-xsm color-brand-one">{{ item?.text }}</p>
+                </div>
+            </div>
 
         </div>
 
@@ -39,7 +56,11 @@
                 </p>
             </div>
 
-            <div class="stats-data w-full">
+            <div class="stats-data w-full flex x-center y-center">
+
+                <p class="font-xsm o-half">
+                    {{ content?.rarity?.text }}
+                </p>
 
             </div>
 
@@ -90,6 +111,7 @@ export default{
         position: absolute;
         top: 0;
         left: 0;
+        z-index: 2;
         opacity: 0;
         width: 100%;
         height: 100%;
@@ -130,6 +152,39 @@ export default{
         }
 
     }
+}
+
+.basic-card-wrapper{
+
+    &.common{
+        background: #FFFFFF;
+    }
+    &.uncommon{
+        background: hsl(122, 40%, 84%);
+    }
+    &.rare{
+        background: linear-gradient(-60deg, rgb(255, 202, 186), rgb(243, 155, 143));
+        border: 1px solid #ff5c46;
+    }
+    &.epic{
+        background: linear-gradient(-60deg, rgb(206, 210, 238), rgb(152, 158, 206));
+        border: 1px solid rgb(87, 80, 196);
+    }
+
+}
+
+.basic-card-description{
+
+    .fighter{
+        background: rgb(58, 119, 252);
+    }
+    .tank{
+        background: rgb(59, 64, 107);
+    }
+    .ranged{
+        background: rgb(247, 96, 51);
+    }
+    
 }
 
 </style>

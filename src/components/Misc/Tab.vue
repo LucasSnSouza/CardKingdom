@@ -17,6 +17,7 @@
             <ButtonBasic
                 v-for="(item, index) of buttons"
                 class="bg-color-brand-four aspect-ratio flex x-center y-center rounded-md pointer"
+                @click="$emit(`Command-${index}`, item?.response)"
                 :key="index"
             >
                 <Icon
@@ -84,7 +85,7 @@ export default{
 <style lang="scss" scoped>
 
 .tab-wrapper{
-    width: 60px;
+    min-width: 60px;
     z-index: 2;
 }
 
